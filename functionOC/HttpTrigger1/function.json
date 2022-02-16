@@ -1,0 +1,36 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "name": "clickuser",
+      "path": "data/click_user_article_cat.csv",
+      "dataType": "binary",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "name": "cossim",
+      "path": "data/articles_embeddings.pickle",
+      "dataType": "binary",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
